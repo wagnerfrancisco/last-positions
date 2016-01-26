@@ -61,7 +61,7 @@ const init = function(map) {
             .then(sendPosition)
             .then(updatePositions)
             .then(function() {
-                setTimeout(syncPosition, 3000);
+                setTimeout(syncPosition, 30000);
             });
     };
 
