@@ -45,14 +45,25 @@ const init = function(map) {
             });
         };
 
+        const center = function(positions) {
+            const len = positions.length;
+
+            if (len > 0) {
+                map.panTo(positions[len-1]);
+            }
+        };
+
         return function(positions) {
             clearAll();
+
             markers = positions.map(function(position) {
                 return new google.maps.Marker({
                     position,
                     map
                 });
             });
+
+            center(positions);
         };
     }());
 
